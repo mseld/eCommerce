@@ -1,0 +1,34 @@
+﻿@model IEnumerable<IM.Web.Domain.FeaturedProduct>
+<section class="home-most-viewed">
+    <div class="container">
+        <h2 class="title-br">@Html.T("New Arrivals")</h2>
+
+        <div>
+            <!-- navigation -->
+            <div class="customBtns">
+                <span class="next5"></span>
+                <span class="prev5"></span>
+            </div>
+
+            <div id="home-mostviewed" class="home-mostviewed clearfix">
+               @foreach (var product in Model)
+               {
+                <div class="slider-item">
+                    <a href="">
+                        <img src="@product.ProductImage" alt="">
+                        <span class="hover-dtls">
+                            <span class="dtls">
+                                <h3>@product.ProductName</h3>
+                                <p>@product.price</p>
+                                <span class="btn-more">@Html.T("More")</span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+               }
+            </div>
+
+            <div class="mostview-holder holder"></div>
+        </div>
+    </div>
+</section>

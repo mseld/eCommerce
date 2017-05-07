@@ -1,0 +1,124 @@
+﻿<section class="consumer">
+    <div class="container">
+        <h2 class="title-br">@Html.T("Contact Us") <span><i class="fa fa-angle-@((UICulture == "ar") ? "left" : "right")" aria-hidden="true"></i>@Html.T("Branches")</span></h2>
+
+        <div class="clearfix">
+            <div class="cols-2 text equalHeight">
+                <h3>@Html.T("Branches")</h3>
+                <div id="branches-accordion">
+                    @if (UICulture == "ar")
+                    {
+                        <h3>المقر الرئيسي</h3>
+                        <div>
+                            <p>السعوديــة - الريـــاض – العليـــا – الشـريـــط التجـــاري جنــوب الفيصليـــة – خلــف مبـني التعــاونيــــة</p>
+                            <p><span>@Html.T("Tel:")</span> 4665555 - 11 - 966+</p>
+                            <p><span>@Html.T("Fax:")</span> 4625555 - 11 - 966+</p>
+                            <p><span>@Html.T("Customer Service"):</span> 8001247272</p>
+                            <p><span>@Html.T("Mail Box:")</span> 42468 الرياض 11541</p>
+                            <p><span>@Html.T("Email"):</span> ajlan@ajlanbros.com</p>
+                        </div>
+                        <h3>الرياض</h3>
+                        <div>
+                            <p><span><strong>معرض البطحاء</strong></span></p>
+                            <p><span>@Html.T("Tel:")</span> 011/4036300</p>
+                            <p><span><strong>معرض التعمير</strong></span></p>
+                            <p><span>@Html.T("Tel:")</span> 011/2869367</p>
+                            <p><span><strong>معرض الديرة</strong></span></p>
+                            <p><span>@Html.T("Tel:")</span> 011/2863771</p>
+                        </div>
+                        <h3>جدة</h3>
+                        <div>
+                            <p><span><strong>معرض باب شرق</strong></span></p>
+                            <p><span>@Html.T("Tel:")</span> 012/6489791</p>
+                        </div>
+                        <h3>الدمام</h3>
+                        <div>
+                            <p><span><strong>معرض سوق الحب</strong></span></p>
+                            <p><span>@Html.T("Tel:")</span> 013/8349076</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <h3>Ajlan Head Quarter</h3>
+                        <div>
+                            <p>Saudi Arabia - Riyadh - Al Olaya - South from Al-Faisalea- Behind Al-Taawoneah building</p>
+                            <p><span>@Html.T("Tel:")</span> 4665555 - 11 - 966+</p>
+                            <p><span>@Html.T("Fax:")</span> 4625555 - 11 - 966+</p>
+                            <p><span>@Html.T("Customer Service"):</span> 8001247272</p>
+                            <p><span>@Html.T("Mail Box:")</span> 42468 Riyadh 11541</p>
+                            <p><span>@Html.T("Email"):</span> ajlan@ajlanbros.com</p>
+                        </div>
+                        <h3>Riyadh</h3>
+                        <div>
+                            <p><span><strong>Batha Showroom </strong></span></p>
+                            <p><span>@Html.T("Tel:")</span> 011/4036300</p>
+                            <p><span><strong>El-Taamer Showroom</strong></span></p>
+                            <p><span>@Html.T("Tel:")</span> 011/2869367</p>
+                            <p><span><strong>El-Dera Showroom</strong></span></p>
+                            <p><span>@Html.T("Tel:")</span> 011/2863771</p>
+                        </div>
+                        <h3>Jeddah</h3>
+                        <div>
+                            <p><span><strong>El-Habeb Showroom</strong></span></p>
+                            <p><span>@Html.T("Tel:")</span> 012/6489791</p>
+                        </div>
+                        <h3>Dammam</h3>
+                        <div>
+                            <p><span><strong>Souq El-Hob Showroom</strong></span></p>
+                            <p><span>@Html.T("Tel:")</span> 013/8349076</p>
+                        </div>                       
+                    }
+
+                </div>
+            </div>
+            <div class="cols-2 img equalHeight">
+                <div id="branches-map"></div>
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts {
+    <script>
+
+        function initializeMap() {
+            $.ajax({
+                url: '@Url.Action("Branches", "Map", new { Area = "Admin" })',
+                success: onSuccess
+            });
+
+            function onSuccess(data) {
+                console.log(data);
+                var locations = data.Locations;
+
+                var map = new google.maps.Map(document.getElementById('branches-map'), {
+                    zoom: 4,
+                    scrollwheel: false,
+                    center: new google.maps.LatLng(24.7136, 46.6753),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+
+                var infowindow = new google.maps.InfoWindow({});
+
+                var marker, i;
+
+                for (i = 0; i < locations.length; i++) {
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(locations[i].Latitude, locations[i].Longitude),
+                        map: map
+                    });
+
+                    var info = '<strong>' + locations[i].Name + '</strong><br>' + locations[i].Description;
+
+                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                        return function () {
+                            infowindow.setContent(info);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+            }
+        }
+
+        google.maps.event.addDomListener(window, 'load', initializeMap);
+    </script>
+}

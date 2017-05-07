@@ -1,0 +1,10 @@
+﻿@using IM.Web.Helpers
+@model int?
+           
+<select id="@Html.IdForModel()" name="@Html.NameForModel()" @Html.RenderHtmlAttributes(ViewData["htmlAttributes"])>
+    <option value="">@Html.TA("no link")</option>
+    @for (int i = 1; i <= 10; i++)
+    {
+        <option value="@i" @( Model == @i ? "selected" : "" )>@i</option>
+    }
+</select>

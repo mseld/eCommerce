@@ -1,0 +1,73 @@
+﻿<section class="consumer">
+    <div class="container">
+        <h2 class="title-br">@Html.T("Customer protection") <span><i class="fa fa-angle-@((UICulture == "ar") ? "left" : "right")" aria-hidden="true"></i>@Html.T("Frequently Asked Questions")</span></h2>
+
+        <div class="clearfix">
+            <div class="cols-2 text equalHeight faq">
+                <div class="faq-slider">
+                    @if (UICulture == "ar")
+                    {
+                        <div class="question">
+                            <h3>س: ماهي المنتجات التي تنتجها شركة عجلان واخوانه ؟</h3>
+                            <p>ج :  تقوم شركة عجلان واخوانه بإنتاج أجود انواع الشماغات والغتر والثياب والملابس الداخلية</p>
+                        </div>
+                        <div class="question">
+                            <h3>س: ماهي الماركات العالمية التي تعمل بها شركة عجلان واخوانه ؟</h3>
+                            <p>ج : تتعامل شركة عجلان واخوانه مع اكبر الماركات العالمية ومنا (فراري – فيرزاتش – كينزو – ميسوني – ريبورتو كفالي – ايس بيرج – بوتشيني – استون مارتن – ميزاراتي - لامبورجيني)</p>
+                        </div>
+                        <div class="question">
+                            <h3>س: هل تقوم الشركة بتقديم تسهيلات لعملائها من تجار الجملة ؟</h3>
+                            <p>ج : نعم تعطي الشركة خصومات كبيرة و مشجعة لعملائها من تجار الجملة يمكنهم التواصل مع مديري الفروع للتعاقد والحصول على التسهيلات .</p>
+                        </div>
+                        <div class="question">
+                            <h3>س: هل يوجد لدى شركة عجلان واخوانه ملابس نسائية ؟</h3>
+                            <p>ج : نعم ، ولكن بشكل محدود في الوقت الحالي لبعض المنتجات في الملابس الداخلية ولكن يوجد لدينا خطة للتوسع في هذا المجال بشكل كبير.</p>
+                        </div>
+                        <div class="question">
+                            <h3>س: ماهي الفروع الموجودة داخل المملكة العربية السعودية ؟</h3>
+                            <p>ج : يوجد لدينا فروع بالمدن والمحافظات التالية ( الرياض – الدمام - جدة).</p>
+                        </div>
+                        <div class="question">
+                            <h3>س: هل توجد أي فروع لشركة عجلان واخوانه بأي من دول الخليج العربي؟</h3>
+                            <p>ج : نعم توجد لدينا فروع بالامارات والكويت</p>
+                        </div>
+                        
+                    }
+                    else
+                    {
+                        <div class="question">
+                            <h3>Q: What are the products produced by Ajlan & Bros. Company?</h3>
+                            <p>A: Ajlan & Bros. Company produces the best quality shemaghs and ghutras (national head dress for males) garments and underwear made from the best international quality cotton.</p>
+                        </div>
+                        <div class="question">
+                            <h3>Q: What are the international brands carried by Ajlan & Bros. Company works?</h3>
+                            <p>A: Ajlan & Bros. Company deals with the most famous international brands such as (Ferrari – Versace – Kenzo – Missoni – Roberto Cavalli - IceBerg – Aston Martin – Maserati – Lamborghini).</p>
+                        </div>
+                        <div class="question">
+                            <h3>Q: Does the Company provide its wholesalers and dealers clients with any facilities?</h3>
+                            <p>A: Yes, the company provides major and encouraging discounts for its dealers and clients, and they can communicate with the branch managers to sign the contracts and get the facilities.</p>
+                        </div>
+                        <div class="question">
+                            <h3>Q: Does Ajlan & Bros. Company have any female clothing?</h3>
+                            <p>A: Yes, but currently on a very limited scale for some products in the underwear department, but we are planning on having a large scale expansion in this field.</p>
+                        </div>
+                        <div class="question">
+                            <h3>Q: Where are the branches located in the Kingdom of Saudi Arabia?</h3>
+                            <p>A: We have branches in the following cities and governorates of the Kingdom (Riyadh – Dammam - Jeddah) </p>
+                        </div>
+                        <div class="question">
+                            <h3>Q: Does Ajlan Bros. & Company have branches in the Gulf countries?</h3>
+                            <p>A: Yes, we have branches in (UAE and Kuwait).</p>
+                        </div>
+                    }                    
+                </div>                
+            </div>
+
+            <div class="cols-2 img equalHeight">
+                <img src="~/Assets/images/cp-faq-img.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+  
+

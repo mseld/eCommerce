@@ -1,0 +1,94 @@
+﻿@model IM.Web.Areas.Admin.Models.LocationsViewModel
+
+@{ ViewBag.Title = "Map".TA(); }
+@section Heading
+{
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>@ViewBag.Title</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="@Url.Action("Index", "Home")">@Html.TA("Home")</a>
+                </li>
+                <li class="active">
+                    <strong>@ViewBag.Title</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-2">
+            <div class="title-action">
+                @if (User.HasAccess(OperatorRoles.SETTINGS + OperatorRoles.WRITE))
+                {
+                    <a href="@Url.Action("Create")" class="btn btn-primary"><span class="fa fa-plus"></span>&nbsp;@Html.TA("Add Location")</a>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h5>@ViewBag.Title</h5>
+    </div>
+    <div class="ibox-content">
+        @if (Model.Locations.Any())
+        {
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.TA("Name")
+                    </th>
+                    <th>
+                        @Html.TA("Latitude")
+                    </th>
+                    <th>
+                        @Html.TA("Longitude")
+                    </th>
+                    <th>
+                        @Html.TA("Description")
+                    </th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model.Locations)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Latitude)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Longitude)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td class="text-right">
+                            <div class="dropdown">
+                                <button class="btn btn-default btn-outline dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <i class="fa fa-gear"></i>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    @if (User.HasAccess(OperatorRoles.SETTINGS + OperatorRoles.WRITE))
+                                    {
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="@Url.Action("Edit", new { id = item.Id })"><span class="fa fa-pencil"></span>&nbsp;@Html.TA("Edit")</a></li>
+                                    }
+                                    @if (User.HasAccess(OperatorRoles.SETTINGS + OperatorRoles.DELETE))
+                                    {
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="@Url.Action("Delete", new { id = item.Id })"><span class="fa fa-times"></span>&nbsp;@Html.TA("Delete")</a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <div>@Html.TA("There are no locations yet. Add new location by clicking on the {0} button above", "<strong>" + @Html.TA("Add Location") + "</strong>")</div>
+        }
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model IM.Web.Models.DistributorViewModel
+<section class="consumer">
+    <div class="container">
+        <h2 class="title-br">@Html.T("Customer protection") <span><i class="fa fa-angle-@((UICulture == "ar") ? "left" : "right")" aria-hidden="true"></i>@Html.T("Distributors Data")</span></h2>
+
+        <div class="clearfix">
+            <div class="cols-2 text equalHeight">
+                <h3>@Html.T("Please fill out all fields")</h3>
+                
+                @using (Html.BeginForm("Distributors", "Pages", FormMethod.Post, new { @class = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.EditorForModel()
+                    <div class="clearfix">
+                        <input type="submit" value="@Html.T("Send")" class="btn-submit btn-more">
+                    </div>
+                }
+            </div>
+            <div class="cols-2 img equalHeight">
+                <img src="~/Assets/images/cp-distData-img.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,41 @@
+﻿@model IM.Web.Models.DistributorViewModel
+<div>
+    <label for="ExhibitionName" class="mainlabel">@Html.T("ExhibitionName")<sup>*</sup></label>
+    @Html.EditorFor(model => model.ExhibitionName, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.ExhibitionName, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="OwnerName" class="mainlabel">@Html.T("OwnerName")<sup>*</sup></label>
+    @Html.EditorFor(model => model.OwnerName, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.OwnerName, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="DirectorName" class="mainlabel">@Html.T("DirectorName")<sup>*</sup></label>
+    @Html.EditorFor(model => model.DirectorName, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.DirectorName, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="CellPhone" class="mainlabel">@Html.T("DirectorCellPhone")<sup>*</sup></label>
+    @Html.EditorFor(model => model.CellPhone, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.CellPhone, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="ClientAddress" class="mainlabel">@Html.T("ClientAddress")<sup>*</sup></label>
+    @Html.EditorFor(model => model.ClientAddress, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.ClientAddress, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="Fax" class="mainlabel">@Html.T("Fax")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Fax, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.Fax, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="Email" class="mainlabel">@Html.T("Email")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="Mailbox" class="mainlabel">@Html.T("Mailbox")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Mailbox, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.Mailbox, "", new { @class = "text-danger" })
+</div>

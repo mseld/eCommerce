@@ -1,0 +1,110 @@
+﻿<!-- Slider main container -->
+<div class="swiper-container hero-slider">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        @if (string.IsNullOrEmpty(Setting("carousel_image_1"))
+                    && string.IsNullOrEmpty(Setting("carousel_image_2"))
+                    && string.IsNullOrEmpty(Setting("carousel_image_3"))
+                    && string.IsNullOrEmpty(Setting("carousel_image_4"))
+                    && string.IsNullOrEmpty(Setting("carousel_image_5"))
+                    && string.IsNullOrEmpty(Setting("carousel_image_6")))
+        {            
+            <div class="swiper-slide">
+                <img src="~/Assets/images/homepage-slider-img1.jpg" alt="">
+                <div class="dtls">
+                    <h2>@Html.T("prodhead2")</h2>
+                    <p>@Html.T("Lorem ipsum3")</p>
+                    <a href="" class="btn-more">@Html.T("More")</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="~/Assets/images/homepage-slider-img1.jpg" alt="">
+                <div class="dtls">
+                    <h2>@Html.T("prodhead2")</h2>
+                    <p>@Html.T("Lorem ipsum3")</p>
+                    <a href="" class="btn-more">@Html.T("More")</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="~/Assets/images/homepage-slider-img1.jpg" alt="">
+                <div class="dtls">
+                    <h2>@Html.T("prodhead2")</h2>
+                    <p>@Html.T("Lorem ipsum3")</p>
+                    <a href="" class="btn-more">@Html.T("More")</a>
+                </div>
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(Setting("carousel_image_1")))
+        {
+            <div class="swiper-slide">
+                <img src="/Api/Upload/@Setting("carousel_image_1")" alt="" />
+                <div class="dtls">
+                    <h2>@Html.T("prodhead2")</h2>
+                    <p>@Html.T("Lorem ipsum3")</p>
+                    <a href="@Setting("carousel_url_1")" class="btn-more">@Html.T("More")</a>
+                </div>
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(Setting("carousel_image_2")))
+        {
+            <div class="swiper-slide">
+                <img src="/Api/Upload/@Setting("carousel_image_2")" alt="" />
+                <div class="dtls">
+                    <h2>@Html.T("prodhead2")</h2>
+                    <p>@Html.T("Lorem ipsum3")</p>
+                    <a href="@Setting("carousel_url_2")" class="btn-more">@Html.T("More")</a>
+                </div>
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(Setting("carousel_image_3")))
+        {
+            <div class="swiper-slide">
+                <img src="/Api/Upload/@Setting("carousel_image_3")" alt="" />
+                <div class="dtls">
+                    <h2>@Html.T("prodhead2")</h2>
+                    <p>@Html.T("Lorem ipsum3")</p>
+                    <a href="@Setting("carousel_url_3")" class="btn-more">@Html.T("More")</a>
+                </div>
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(Setting("carousel_image_4")))
+        {
+            <div class="swiper-slide">
+                <img src="/Api/Upload/@Setting("carousel_image_4")" alt="" />
+                <div class="dtls">
+                    <h2>@Html.T("prodhead2")</h2>
+                    <p>@Html.T("Lorem ipsum3")</p>
+                    <a href="@Setting("carousel_url_4")" class="btn-more">@Html.T("More")</a>
+                </div>
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(Setting("carousel_image_5")))
+        {
+            <div class="swiper-slide">
+                <img src="/Api/Upload/@Setting("carousel_image_5")" alt="" />
+                <div class="dtls">
+                    <h2>@Html.T("prodhead2")</h2>
+                    <p>@Html.T("Lorem ipsum3")</p>
+                    <a href="@Setting("carousel_url_5")" class="btn-more">@Html.T("More")</a>
+                </div>
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(Setting("carousel_image_6")))
+        {
+            <div class="swiper-slide">
+                <img src="/Api/Upload/@Setting("carousel_image_6")" alt="" />
+                <div class="dtls">
+                    <h2>@Html.T("prodhead2")</h2>
+                    <p>@Html.T("Lorem ipsum3")</p>
+                    <a href="@Setting("carousel_url_6")" class="btn-more">@Html.T("More")</a>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>

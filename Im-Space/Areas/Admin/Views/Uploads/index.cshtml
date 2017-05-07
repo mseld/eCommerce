@@ -1,0 +1,79 @@
+﻿@model IEnumerable<IM.Web.Domain.Upload>
+@{ ViewBag.Title = "Uploads".TA(); }
+@section Heading
+{
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>@ViewBag.Title</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="@Url.Action("Index", "Home")">@Html.TA("Home")</a>
+                </li>
+                <li class="active">
+                    <strong>@ViewBag.Title</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-2">
+            <div class="title-action">
+                @if (User.HasAccess(OperatorRoles.CONTENT + OperatorRoles.WRITE))
+                {
+                    <a href="@Url.Action("UploadFile")" class="btn btn-primary"><span class="fa fa-plus"></span>&nbsp;@Html.TA("Upload File")</a>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h5>@ViewBag.Title</h5>
+    </div>
+
+    <div class="ibox-content">
+        @if (Model.Any())
+        {
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>
+                        @Html.TA("Id")
+                    </th>
+                    <th>
+                        @Html.TA("File Name")
+                    </th>
+                    <th>
+                        @Html.TA("Content Type")
+                    </th>
+                    <th>
+                        @Html.TA("File Extension")
+                    </th>                   
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">
+                            <a role="menuitem" tabindex="-1" href="@Url.Action("Delete", new {id = item.Id})"><span class="fa fa-times"></span></a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            <a href="/Api/FilePath/@item.Id">@Html.DisplayFor(modelItem => item.FileName)</a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContentType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Extension)
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <div>@Html.TA("There are no files yet. upload new file by clicking on the {0} button above", "<strong>" + @Html.TA("Upload File") + "</strong>")</div>
+        }
+    </div>
+</div>

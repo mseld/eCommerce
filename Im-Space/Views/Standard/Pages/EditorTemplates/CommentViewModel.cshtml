@@ -1,0 +1,47 @@
+﻿@model IM.Web.Models.CommentViewModel
+<div>
+    <label for="MessageType" class="mainlabel">@Html.T("MessageType")<sup>*</sup></label>
+    @Html.EditorFor(model => model.MessageType, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.MessageType, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="Section" class="mainlabel">@Html.T("Section")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Section, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.Section, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="Subject" class="mainlabel">@Html.T("Subject")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="Name" class="mainlabel">@Html.T("Name")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="Address" class="mainlabel">@Html.T("Address")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="Email" class="mainlabel">@Html.T("Email")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="ConfirmEmail" class="mainlabel">@Html.T("ConfirmEmail")<sup>*</sup></label>
+    @Html.EditorFor(model => model.ConfirmEmail, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.ConfirmEmail, "", new { @class = "text-danger" })
+</div>
+<div class="fileupload-cont">
+    <label for="Attachment" class="mainlabel">@Html.T("AttachedFile")<sup></sup></label>
+    <input type="text" class="txtbox" id="AttachedFile" name="AttachedFile">
+    <span class="fileupload">@Html.T("Choose file")@Html.TextBoxFor(model => model.Attachment, new { type = "file"  ,@class = "btn-fileupload" })</span>            
+</div>
+<div>
+    <label for="Message" class="mainlabel">@Html.T("Message")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "txtbox txtarea" } })
+    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+</div>
+  

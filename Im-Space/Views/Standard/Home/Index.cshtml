@@ -1,0 +1,94 @@
+﻿<section class="home-hero-slider">
+    <div class="container">
+        <!-- Slider main container -->
+        @Html.Partial("_Carousel")
+    </div>
+</section>
+
+@if (SettingTrue("show_products_section"))
+{
+    @Html.Action("GetProductFeatured", "Product", new { locale = UICulture })        
+}
+
+@if (SettingTrue("show_new_arrivals"))
+{
+    @Html.Action("GetNewArrivals", "Product", new { locale = UICulture })
+}
+
+@if (SettingTrue("show_most_viewed"))
+{
+    @Html.Action("GetMostViewed", "Product", new { locale = UICulture })
+}
+
+@if (SettingTrue("show_offers"))
+{
+    <section class="home-offers">
+        <div class="container">
+            <h2 class="title-br">@Html.T("Offers")</h2>
+
+            <div class="swiper-container home-offers-slider">
+                <!-- Add Arrows -->
+                <div class="swiper-button-@((UICulture == "ar") ? "next" : "prev")"></div>
+                <div class="swiper-button-@((UICulture == "ar") ? "prev" : "next")"></div>
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide clearfix">
+                        <div class="text">
+                            <span class="special-flag">@Html.T("Special offer")</span>
+                            <h2>@Html.T("Lorem Ipsum")</h2>
+                            <div class="price">
+                                <span class="curr-price">٢٤$</span>
+                                <span class="prev-price">٣٠$</span>
+                            </div>
+                            <a href="" class="btn-buynow">@Html.T("Buy now")</a>
+                            <a href="" class="btn-moreoffers">@Html.T("More offers")</a>
+                        </div>
+                        <div class="img">
+                            <img src="/Assets/images/home-offers-img1.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide clearfix">
+                        <div class="text">
+                            <span class="special-flag">@Html.T("Special offer")</span>
+                            <h2>@Html.T("Lorem Ipsum")</h2>
+                            <div class="price">
+                                <span class="curr-price">@Html.T("price_1")</span>
+                                <span class="prev-price">@Html.T("price_2")</span>
+                            </div>
+                            <a href="" class="btn-buynow">@Html.T("Buy now")</a>
+                            <a href="" class="btn-moreoffers">@Html.T("More offers")</a>
+                        </div>
+                        <div class="img">
+                            <img src="~/Assets/images/home-offers-img1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+}
+
+@if (SettingTrue("show_social_media"))
+{
+    <section class="home-social-plugins">
+        <div class="container clearfix">
+            <h2 class="title-br">@Html.T("Follow us on Social media")</h2>
+
+            <div class="cols-2">
+                <h3><img src="~/Assets/images/facebook-icon.png" alt=""> Facebook</h3>
+                <div class="home-social-cont">
+                    <img src="~/Assets/images/facebook-plugin.jpg" alt="">
+                </div>
+            </div>
+            <div class="cols-2">
+                <h3><img src="~/Assets/images/instagram-icon.png" alt=""> Instagram</h3>
+                <div class="home-social-cont">
+                    <img src="~/Assets/images/instagram-plugin.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+}

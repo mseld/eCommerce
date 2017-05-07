@@ -1,0 +1,92 @@
+﻿@model IM.Web.Models.CustomerInfoViewModel
+<section class="consumer">
+    <div class="container">
+        <h2 class="title-br">@Html.T("Customer protection") <span><i class="fa fa-angle-@((UICulture == "ar") ? "left" : "right")" aria-hidden="true"></i>@Html.T("Customer info")</span></h2>
+
+        <div class="clearfix">
+            @using (Html.BeginForm("CustomerInfo", "Pages", FormMethod.Post, new { @class = "form" }))
+            {
+                <div id="customer-info" class="cols-2 text" style="height: 590px;">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <h1></h1>
+                    <section>
+                        <h3>@Html.T("Please fill out all fields")</h3>
+                        <div class="ques">
+                            <label for="Name" class="mainlabel">@Html.T("Name")<sup>*</sup></label>
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "txtbox" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="ques">
+                            <label for="Phone" class="mainlabel">@Html.T("CellPhone")<sup>*</sup></label>
+                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "txtbox" } })
+                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="ques">
+                            <label for="Email" class="mainlabel">@Html.T("Email")<sup>*</sup></label>
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "txtbox" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="ques">                            
+                            <label for="Nationality" class="mainlabel">@Html.T("Nationality")<sup>*</sup></label>
+                            @Html.DropDownListFor(model => model.Nationality, (IEnumerable<SelectListItem>)ViewBag.Nationality, "", new { @class = "select-menu" })
+                            @Html.ValidationMessageFor(model => model.Nationality, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="ques">
+                            <label for="Gender" class="mainlabel">@Html.T("Gender")<sup>*</sup></label>
+                            <label for="" class="check-cont">
+                                <input type="radio" class="check" id="@Html.IdFor(m => Model.Gender)" name="@Html.NameFor(m => Model.Gender)" value="Male" /> @Html.T("Male")
+                            </label>
+                            <label for="" class="check-cont">
+                                <input type="radio" class="check" id="@Html.IdFor(m => Model.Gender)" name="@Html.NameFor(m => Model.Gender)" value="Female" /> @Html.T("Female")
+                            </label>
+                            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="ques">
+                            <label for="Age" class="mainlabel">@Html.T("Age")<sup>*</sup></label>
+                            @Html.DropDownListFor(model => model.Age, (IEnumerable<SelectListItem>)ViewBag.Age, "", new { @class = "select-menu" })
+                            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="ques">
+                            <label for="Region" class="mainlabel">@Html.T("Please select a region")<sup>*</sup></label>
+                            @Html.DropDownListFor(model => model.Region, (IEnumerable<SelectListItem>)ViewBag.Region, "", new { @class = "select-menu" })
+                            @Html.ValidationMessageFor(model => model.Region, "", new { @class = "text-danger" })
+                        </div>                        
+                    </section>
+
+                    @Html.EditorForModel()
+                    
+                </div>
+            }
+          
+            <div class="cols-2 img" style="height: 590px;">
+                <img src="~/Assets/images/cp-custInfo-img.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>  
+
+@section scripts {
+    <script>
+        $("#customer-info").steps({
+            headerTag: "h1",
+            bodyTag: "section",
+            titleTemplate: '<span class="number">#index#</span> #title#',
+            transitionEffect: "fade",
+            enableCancelButton: false,
+            labels: {
+                previous: "@Html.T("Previous")",
+                next: "@Html.T("Next")",
+                finish: "@Html.T("Send")"
+            },
+            onFinishing: function (event, currentIndex) {
+                $('form').validate().settings.ignore = ":disabled";
+                return $('form').valid();
+            },
+            onFinished: function (event, currentIndex) {
+                $('form').submit();
+            }
+        });
+    </script>
+}

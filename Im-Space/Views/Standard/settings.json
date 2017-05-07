@@ -1,0 +1,412 @@
+﻿{
+  "sections": [
+    /* 
+      {
+      "name": "Colors",
+      "items": [
+        {
+          "key": "outer_background_color",
+          "description": "Outer background color",
+          "descriptionТ": { "ar": "Outer background color" },
+          "default": "f5f5f5",
+          "type": "color"
+        },
+        {
+          "key": "topbar_background_color",
+          "description": "Topbar background color",
+          "descriptionT": { "ar": "Topbar background color" },
+          "default": "353d41",
+          "type": "color"
+        },
+        {
+          "key": "categories_header_background_color",
+          "description": "Categories Header background color",
+          "descriptionT": { "ar": "Categories Header background color" },
+          "default": "5e90af",
+          "type": "color"
+        },
+        {
+          "key": "navbar_text_color",
+          "description": "Navigation bar text color",
+          "descriptionT": { "ar": "Navigation bar text color" },
+          "default": "353d41",
+          "type": "color"
+        },
+        {
+          "key": "navbar_texthover_color",
+          "description": "Navigation bar text hover color",
+          "descriptionT": { "ar": "Navigation bar text hover color" },
+          "default": "ff6346",
+          "type": "color"
+        },
+        {
+          "key": "navbar_texthover_border_color",
+          "description": "Navigation bar text hover border color",
+          "descriptionT": { "ar": "Navigation bar text hover border color" },
+          "default": "ff6346",
+          "type": "color"
+        },
+        {
+          "key": "footer_background_color",
+          "description": "Footer background color",
+          "descriptionT": { "ar": "Footer background color" },
+          "default": "202020",
+          "type": "color"
+        },
+        {
+          "KEY": "TEXT_COLOR",
+          "DESCRIPTION": "TEXT COLOR",
+          "DEFAULT": "555555",
+          "TYPE": "COLOR"
+        },
+        {
+          "KEY": "LINK_COLOR",
+          "DESCRIPTION": "LINK COLOR",
+          "DEFAULT": "F45B4F",
+          "TYPE": "COLOR"
+        }
+      ]
+    },
+  
+           {
+            "name": "Fonts",
+            "items": [
+                {
+                    "key": "base_font",
+                    "description": "Base Font",
+                    "default": "Helvetica",
+                    "type": "dropdown",
+                    "options": [
+                        { "value": "Helvetica", "description": "Helvetica/Arial" },
+                        { "value": "Helvetica", "description": "Helvetica/Arial" }
+                    ]
+                },
+                {
+                    "key": "heading_font",
+                    "description": "Heading Font",
+                    "default": "Helvetica",
+                    "type": "dropdown",
+                    "options": [
+                        { "value": "Helvetica", "description": "Helvetica/Arial" },
+                        { "value": "Helvetica", "description": "Helvetica/Arial" }
+                    ]
+                }
+            ]
+        },
+*/
+
+    {
+      "name": "Header",
+      "items": [
+        {
+          "key": "logo_file",
+          "description": "Store logo",
+          "descriptionT": { "ar": "Store logo" },
+          "hint": "Should be less than 220 pixels wide",
+          "hintT": { "ar": "Should be less than 220 pixels wide" },
+          "type": "upload"
+        },
+        {
+          "key": "favicon_file",
+          "description": "Favicon",
+          "descriptionT": { "ar": "Favicon" },
+          "hint": "Must be 16x16 in ico format",
+          "hintT": { "ar": "Must be 16x16 in ico format" },
+          "type": "upload"
+        },
+        {
+          "key": "shipping_label",
+          "description": "Shipping Label",
+          "descriptionT": { "ar": "Shipping Label" },
+          "default": "free shipping",
+          "defaultT": { "ar": "free shipping" },
+          "type": "textbox"
+        },
+        {
+          "key": "shipping_hint",
+          "description": "Shipping Hint",
+          "descriptionT": { "ar": "Shipping Hint" },
+          "default": "all order over €50",
+          "defaultT": { "ar": "all order over €50" },
+          "type": "textbox"
+        },
+        {
+          "key": "return_label",
+          "description": "Return Label",
+          "descriptionT": { "ar": "Return Label" },
+          "default": "Return & Exchange",
+          "defaultT": { "ar": "Return & Exchange" },
+          "type": "textbox"
+        },
+        {
+          "key": "return_hint",
+          "description": "Return Hint",
+          "descriptionT": { "ar": "Return Hint" },
+          "default": "in 3 working days",
+          "defaultT": { "ar": "in 3 working days" },
+          "type": "textbox"
+        },
+        {
+          "key": "phone_label",
+          "description": "Phone Label",
+          "descriptionT": { "ar": "Phone Label" },
+          "default": "(+084) 0123 456 789",
+          "type": "textbox"
+        },
+        {
+          "key": "phone_hint",
+          "description": "Phone Hint",
+          "descriptionT": { "ar": "Phone Hint" },
+          "default": "Sed ullamcorper mattis",
+          "defaultT": { "ar": "Sed ullamcorper mattis" },
+          "type": "textbox"
+        }
+      ]
+    },
+
+    {
+      "name": "Footer",
+      "items": [
+        {
+          "key": "contact_fax",
+          "description": "Contact Fax",
+          "descriptionT": { "ar": "Contact Fax" },
+          "default": "(+966) 11 - 462 5555",
+          //"defaultT": { "ar": "(+966) 11 - 462 5555" },
+          "type": "textbox"
+        },
+        {
+          "key": "contact_phone",
+          "description": "Contact Phone",
+          "descriptionT": { "ar": "Contact Phone" },
+          "default": "(+966) 11 - 462 5555",
+          "type": "textbox"
+        },
+        {
+          "key": "hot_line",
+          "description": "Hot Line",
+          "descriptionT": { "ar": "Hot Line" },
+          "default": "800 124 7272",
+          "type": "textbox"
+        },
+        {
+          "key": "contact_email",
+          "description": "Contact Email",
+          "descriptionT": { "ar": "Contact Email" },
+          "default": "ajlan@ajlanbros.com",
+          "type": "textbox"
+        },
+        {
+          "key": "mail_box",
+          "description": "Mail Box",
+          "descriptionT": { "ar": "mail_box" },
+          "default": "42468 Riadh 11541",
+          "type": "textbox"
+        },
+        {
+          "key": "links_column1_title",
+          "description": "Main Section",
+          "descriptionT": { "ar": "Main Section" },
+          "default": "Main",
+          "defaultT": { "ar": "الرئيسيه" },
+          "type": "textbox"
+        },
+        {
+          "key": "links_column2_title",
+          "description": "Products Section",
+          "descriptionT": { "ar": "Products Section" },
+          "default": "Products",
+          "defaultT": { "ar": "منتجاتنا" },
+          "type": "textbox"
+        },
+        {
+          "key": "links_column3_title",
+          "description": "Contact Us Section",
+          "descriptionT": { "ar": "Contact Us Section" },
+          "default": "Contact Us",
+          "defaultT": { "ar": "اتصل بنا" },
+          "type": "textbox"
+        },
+        {
+          "key": "links_column4_title",
+          "description": "Customer Service Section",
+          "descriptionT": { "ar": "Customer Service Section" },
+          "default": "Customer Service",
+          "defaultT": { "ar": "خدمة المستهلك" },
+          "type": "textbox"
+        },
+        {
+          "key": "links_column5_title",
+          "description": "Branches Section",
+          "descriptionT": { "ar": "Branches Section" },
+          "default": "Branches",
+          "defaultT": { "ar": "فروعنا" },
+          "type": "textbox"
+        }
+      ]
+    },
+
+    {
+      "name": "Carousel",
+      "items": [
+        {
+          "key": "show_carousel",
+          "description": "Show carousel?",
+          "descriptionT": { "ar": "Show carousel?" },
+          "default": "true",
+          "type": "checkbox"
+        },
+        {
+          "key": "carousel_image_1",
+          "description": "Image 1",
+          "descriptionT": { "ar": "Image 1" },
+          "type": "upload"
+        },
+        {
+          "key": "carousel_url_1",
+          "description": "Image 1 links to",
+          "descriptionT": { "ar": "Image 1 links to" },
+          "type": "textbox"
+        },
+        {
+          "key": "carousel_image_2",
+          "description": "Image 2",
+          "descriptionT": { "ar": "Image 2" },
+          "type": "upload"
+        },
+        {
+          "key": "carousel_url_2",
+          "description": "Image 2 links to",
+          "descriptionT": { "ar": "Image 2 links to" },
+          "type": "textbox"
+        },
+        {
+          "key": "carousel_image_3",
+          "description": "Image 3",
+          "descriptionT": { "ar": "Image 3" },
+          "type": "upload"
+        },
+        {
+          "key": "carousel_url_3",
+          "description": "Image 3 links to",
+          "descriptionT": { "ar": "Image 3 links to" },
+          "type": "textbox"
+        },
+        {
+          "key": "carousel_image_4",
+          "description": "Image 4",
+          "descriptionT": { "ar": "Image 4" },
+          "type": "upload"
+        },
+        {
+          "key": "carousel_url_4",
+          "description": "Image 4 links to",
+          "descriptionT": { "ar": "Image 4 links to" },
+          "type": "textbox"
+        },
+        {
+          "key": "carousel_image_5",
+          "description": "Image 5",
+          "descriptionT": { "ar": "Image 5" },
+          "type": "upload"
+        },
+        {
+          "key": "carousel_url_5",
+          "description": "Image 5 links to",
+          "descriptionT": { "ar": "Image 5 links to" },
+          "type": "textbox"
+        },
+        {
+          "key": "carousel_image_6",
+          "description": "Image 6",
+          "descriptionT": { "ar": "Image 6" },
+          "type": "upload"
+        },
+        {
+          "key": "carousel_url_6",
+          "description": "Image 6 links to",
+          "descriptionT": { "ar": "Image 6 links to" },
+          "type": "textbox"
+        }
+      ]
+    },
+
+    {
+      "name": "Social Links",
+      "items": [
+        {
+          "key": "twitter_url",
+          "description": "Twitter Link",
+          "descriptionT": { "ar": "Twitter Link" },
+          "type": "textbox"
+        },
+        {
+          "key": "facebook_url",
+          "description": "Facebook Link",
+          "descriptionT": { "ar": "Facebook Link" },
+          "type": "textbox"
+        },
+        {
+          "key": "googleplus_url",
+          "description": "Google+ Link",
+          "descriptionT": { "ar": "Google+ Link" },
+          "type": "textbox"
+        },
+        {
+          "key": "youtube_url",
+          "description": "Youtube Link",
+          "descriptionT": { "ar": "Youtube Link" },
+          "type": "textbox"
+        },
+        {
+          "key": "linkedin_url",
+          "description": "Linkedin Link",
+          "descriptionT": { "ar": "Linkedin Link" },
+          "type": "textbox"
+        },
+        {
+          "key": "instagram_url",
+          "description": "Instagram Link",
+          "descriptionT": { "ar": "Instagram Link" },
+          "type": "textbox"
+        }
+      ]
+    },
+
+    {
+      "name": "Sections Visability",
+      "items": [
+        {
+          "key": "show_products_section",
+          "description": "Products Section",
+          "default": "true",
+          "type": "checkbox"
+        },
+        {
+          "key": "show_new_arrivals",
+          "description": "New Arrivals",
+          "default": "true",
+          "type": "checkbox"
+        },
+        {
+          "key": "show_most_viewed",
+          "description": "Most viewed",
+          "default": "true",
+          "type": "checkbox"
+        },
+        {
+          "key": "show_offers",
+          "description": "Offers",
+          "default": "true",
+          "type": "checkbox"
+        },
+        {
+          "key": "show_social_media",
+          "description": "Social media",
+          "default": "true",
+          "type": "checkbox"
+        }
+      ]
+    }
+  ]
+}

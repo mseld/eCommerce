@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mainmenu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Menu id="1" text="Home" textLocalized="الرئيسية" href="/Home/Index" order="1" />
+  <Menu id="2" text="Ajlan &amp; Bros" textLocalized="عجلان وإخوانه" href="#" order="2">
+    <Items>
+      <Menu id="3" text="Our Message" textLocalized="رسالتنا" href="/Pages/CompanyMessage" order="1" parentId="2" />
+      <Menu id="4" text="Company info" textLocalized="ملف الشركة" href="/Pages/CompanyProfile" order="2" parentId="2" />
+      <Menu id="5" text="Our goals" textLocalized="اهدافنا و مبادئنا" href="/Pages/CompanyGoals" order="3" parentId="2" />
+      <Menu id="6" text="Certificates" textLocalized="شهاداتنا" href="/Pages/Certificates" order="4" parentId="2" />
+      <Menu id="7" text="Partnership" textLocalized="الشركات الشقيقة" href="/Pages/Partnership" order="5" parentId="2" />
+    </Items>
+  </Menu>
+  <Menu id="8" text="Products" textLocalized="منتجاتنا" href="/Pages/Products" order="3">
+    <Items>
+      <Menu id="9" text="Shemag" textLocalized="الأشمغة" href="/Pages/ProductDetails" order="1" parentId="8" />
+      <Menu id="10" text="Ghotr" textLocalized="الغتر" href="/Pages/ProductDetails" order="2" parentId="8" />
+      <Menu id="11" text="Thobe" textLocalized="الثياب" href="/Pages/ProductDetails" order="3" parentId="8" />
+      <Menu id="12" text="Underwear" textLocalized="الملابس الداخلية" href="/Pages/ProductDetails" order="4" parentId="8" />
+    </Items>
+  </Menu>
+  <Menu id="13" text="Careers" textLocalized="الوظائف" href="#" order="4" />
+  <Menu id="14" text="Media Centers" textLocalized="المركز الاعلامي" href="#" order="5">
+    <Items>
+      <Menu id="15" text="News" textLocalized="أخبارنا" href="/Pages/News" order="1" parentId="14" />
+      <Menu id="16" text="Photos" textLocalized="الصور" href="/Pages/Photos" order="2" parentId="14" />
+      <Menu id="17" text="Videos" textLocalized="الفيديوهات" href="/Pages/Videos" order="3" parentId="14" />
+    </Items>
+  </Menu>
+  <Menu id="18" text="Customer protection" textLocalized="حماية المستهلك" href="#" order="6">
+    <Items>
+      <Menu id="19" text="Distributors Data" textLocalized="بيانات الموزعين" href="/Pages/Distributors" order="1" parentId="18" />
+      <Menu id="20" text="Customer info" textLocalized="بيانات العملاء" href="/Pages/CustomerInfo" order="2" parentId="18" />
+      <Menu id="21" text="Frequently Asked Questions" textLocalized="الأسئلة الأكثر شيوعا" href="/Pages/FAQ" order="3" parentId="18" />
+      <Menu id="22" text="Comments" textLocalized="استبيان التجار" href="/Pages/Comments" order="4" parentId="18" />
+    </Items>
+  </Menu>
+  <Menu id="23" text="Contact Us" textLocalized="اتصل بنا" href="#" order="7">
+    <Items>
+      <Menu id="24" text="Questionnaire" textLocalized="استبيان التجار" href="/Pages/Questionnaire" order="1" parentId="23" />
+      <Menu id="25" text="Branches" textLocalized="فروعنا" href="/Pages/Branches" order="2" parentId="23" />
+      <Menu id="26" text="Contact Us" textLocalized="اتصل بنا" href="/Pages/ContactUs" order="3" parentId="23" />
+    </Items>
+  </Menu>
+</Mainmenu>

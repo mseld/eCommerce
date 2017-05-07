@@ -1,0 +1,16 @@
+﻿@model IM.Web.Models.ContactUsViewModel
+<div>
+    <label for="Name" class="mainlabel">@Html.T("Name")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+</div>
+<div>
+    <label for="Email" class="mainlabel">@Html.T("Email")<sup>*</sup></label>
+    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "txtbox" } })
+    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+</div>
+<div>
+   <label for="Message" class="mainlabel">@Html.T("Message")<sup>*</sup></label>
+   @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "txtbox txtarea" } })
+   @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+</div>

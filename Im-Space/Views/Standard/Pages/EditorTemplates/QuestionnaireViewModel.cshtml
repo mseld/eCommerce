@@ -1,0 +1,55 @@
+﻿@using IM.Web.Domain
+@model IM.Web.Models.QuestionnaireViewModel
+
+@for (int i = 0; i < Model.Questions.Count(); i++)
+{
+    var question = Model.Questions[i];
+    var questText = (UICulture == "ar") ? question.Textlocalized : question.Text;
+
+    if (i == 0 || (i % 5) == 0)
+    {
+        <h1></h1>
+        @:<section>
+        <h3>@Html.T("Please fill out all fields")</h3>
+    }
+
+    <div class="ques">
+        @Html.HiddenFor(m => Model.Questions[i].Id)
+        @Html.HiddenFor(m => Model.Questions[i].QuestionType)
+        @Html.HiddenFor(m => Model.Questions[i].HasOthersOption)
+        @Html.HiddenFor(m => Model.Questions[i].QuestionGroupId)
+        @Html.HiddenFor(m => Model.Questions[i].AnswerGroupId)
+        @Html.HiddenFor(m => Model.Questions[i].Text)
+        @Html.HiddenFor(m => Model.Questions[i].Textlocalized)
+        <label for="@Html.IdFor(m => Model.Questions[i].Value)" class="mainlabel">@questText<sup>*</sup></label>
+        @switch (question.QuestionType)
+        {
+            case QuestionTypes.Text:
+                <input type="text" class="txtbox" id="@Html.IdFor(m => Model.Questions[i].Value)" name="@Html.NameFor(m => Model.Questions[i].Value)" />
+                break;
+            case QuestionTypes.Multiline:
+                <textarea name="@Html.NameFor(m => Model.Questions[i].Value)" id="@Html.IdFor(m => Model.Questions[i].Value)" class="txtbox txtarea"></textarea>
+                break;
+            case QuestionTypes.Radiobutton:
+                for (int j = 0; j < question.Answers.Count; j++)
+                {
+                    @Html.HiddenFor(m => Model.Questions[i].Answers[j].Id)
+                    @Html.HiddenFor(m => Model.Questions[i].Answers[j].Text)
+                    @Html.HiddenFor(m => Model.Questions[i].Answers[j].Textlocalized)
+                    var answer = question.Answers[j];
+                    var ansText = (UICulture == "ar") ? answer.Textlocalized : answer.Text;
+                    <label for="" class="check-cont">
+                        <input type="radio" class="check" id="@Html.IdFor(m => Model.Questions[i].Value)" name="@Html.NameFor(m => Model.Questions[i].Value)" value="@answer.Id" />
+                        @ansText
+                    </label>
+                }
+                break;
+        }
+    </div>
+
+    var num = i.ToString();
+    if (num.Contains("4") || num.Contains("9"))
+    {
+       @:</section>
+    }
+}

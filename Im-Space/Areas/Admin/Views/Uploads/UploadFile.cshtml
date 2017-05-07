@@ -1,0 +1,38 @@
+﻿@model string
+@{ ViewBag.Title = "Upload File".TA(); }
+@section Heading
+{
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>@ViewBag.Title</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="@Url.Action("Index", "Uploads")">@Html.TA("Uploads")</a>
+                </li>
+                <li class="active">
+                    <strong>@ViewBag.Title</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+}
+
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h5>@ViewBag.Title</h5>
+    </div>
+
+    <div class="ibox-content">
+        @using (Html.BeginForm("UploadFile", "Uploads", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <p>
+                <input type="file" name="file" id="file" class="filestyle" data-buttonBefore="true" data-buttonText="&nbsp; Choose file" data-buttonName="btn-primary">
+                <br />
+                <button type="submit" class="btn btn-primary"><span class="fa fa-upload"></span> @Html.TA("Upload")</button>
+            </p>
+            <p>
+                @Html.Raw(Model.NL2BR())
+            </p>
+        }        
+    </div>
+</div>

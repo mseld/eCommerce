@@ -1,0 +1,10 @@
+﻿@using IM.Web.Models
+@model IEnumerable<ContentPageLinksViewModel>
+
+@foreach (ContentPageLinksViewModel item in Model)
+{
+    if (item.Visable)
+    {
+        <li><a href="@item.Url">@item.Title.T()</a></li>
+    }
+}

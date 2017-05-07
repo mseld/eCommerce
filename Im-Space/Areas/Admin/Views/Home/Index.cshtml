@@ -1,0 +1,18 @@
+﻿@using IM.Web.Areas.Admin.Controllers
+@{
+    ViewBag.Title = "Dashboard".TA();
+}
+<div class="row">
+    <div class="col-lg-3 partial" data-url="@Url.Action("SalesBox", "Report")">
+        <span class="fa fa-spinner fa-spin"></span> @Html.TA("Loading...")
+    </div>
+    <div class="col-lg-3 partial" data-url="@Url.Action("OrdersBox", "Report")">
+        <span class="fa fa-spinner fa-spin"></span> @Html.TA("Loading...")
+    </div>
+    <div class="col-lg-3 partial" data-url="@Url.Action("VisitsBox", "Report")">
+        <span class="fa fa-spinner fa-spin"></span> @Html.TA("Loading...")
+    </div>
+    <div class="col-lg-3 partial" data-url="@Url.Action("ReturnsBox", "Report")">
+        <span class="fa fa-spinner fa-spin"></span> @Html.TA("Loading...")
+    </div>
+</div>

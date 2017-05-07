@@ -1,0 +1,133 @@
+﻿@model IM.Web.Areas.Admin.Models.LocationViewModel
+
+@{ ViewBag.Title = "Add Location".TA(); }
+@section Heading
+{
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>@ViewBag.Title</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="@Url.Action("Index", "Home")">@Html.TA("Home")</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Map")">@Html.TA("Map")</a>
+                </li>
+                <li class="active">
+                    <strong>@ViewBag.Title</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>@ViewBag.Title</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div id="map" style="width:100%; height:250px; background-color:gainsboro;"></div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>  
+                <div class="hr-line-dashed"></div>
+                <h4>Branch</h4>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @Html.EditorForModel()
+               
+                <div class="hr-line-dashed"></div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn btn-primary">@Html.TA("Save")</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script language="javascript">
+    var map;
+    var marker;
+    var infoWindow;
+    var coordinates = { lat: 24.726874870506997, lng: 46.680908203125 };
+
+    function initMap() {
+        var options = {
+            zoom: 8,
+            center: coordinates
+        };
+        map = new google.maps.Map(document.getElementById('map'), options);
+        google.maps.event.addListener(map, 'click', onClickMap);
+        infoWindow = new google.maps.InfoWindow();
+        addMarker(coordinates);
+    }
+
+    function onClickMap(e) {
+        clearMarker();
+        addMarker(e.latLng);
+    }
+
+    function addMarker(location) {
+        marker = new google.maps.Marker({
+            map: map,
+            draggable: true,
+            animation: google.maps.Animation.DROP,
+            position: location,
+            icon: '@Url.Content("~/Content/img/48_map-marker.png")'
+        });
+        marker.addListener('click', onClickBounce);
+        marker.addListener('drag', onDragBounce);
+        setPosition(location);
+    }
+
+    function onClickBounce(e) {
+        if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+        } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+        showInfoWindow(e);
+    }
+
+    function showInfoWindow(e) {
+        //Latitude and Longitude
+        var contentString = '<b>Coordinates.</b><br>' +
+               'Latitude: ' + e.latLng.lat() + '<br>' +
+               'Longitude: ' + e.latLng.lng() + '<br>';
+
+        // Set the info window's content and position.
+        infoWindow.setContent(contentString);
+        infoWindow.open(map, marker);
+    }
+
+    function onDragBounce(e) {
+        setPosition({ lat: e.latLng.lat(), lng: e.latLng.lng() })
+        showInfoWindow(e)
+    }
+
+    function clearMarker() {
+        if (marker) {
+            marker.setMap(null);
+        }
+    }
+
+    function setPosition(loc) {
+        $('#Latitude').val(loc.lat);
+        $('#Longitude').val(loc.lng);
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBDC9iH0h9YQA9jWDDs2rb5YrAm7UGVvo&callback=initMap">
+</script>

@@ -1,0 +1,98 @@
+﻿<section class="media">
+    <div class="container">
+
+        <div>
+            <h2 class="title-br">@Html.T("Media centers") <span><i class="fa fa-angle-@((UICulture == "ar") ? "left" : "right")" aria-hidden="true"></i>@Html.T("Videos")</span></h2>
+
+            <!-- Swiper -->
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#popup-1" class="gallery-popup">
+                            <img src="~/Assets/images/media-photos-img01.jpg" alt="">
+                            <div class="video-overlay"></div>
+                            <div class="text">
+                                <h3>شماغ بوتشيني رجالي أحمر (2015)</h3>
+                                <p>ديلوكس رجالي أحمر لقطة</p>
+                                <span>تاريخ</span>
+                            </div>
+                        </a>
+
+                        <div id="popup-1" class="prod-popup media-popup mfp-hide">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/EQjVl4UYYPQ" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#popup-2" class="gallery-popup">
+                            <img src="~/Assets/images/media-photos-img01.jpg" alt="">
+                            <div class="video-overlay"></div>
+                            <div class="text">
+                                <h3>شماغ بوتشيني رجالي أحمر (2015)</h3>
+                                <p>ديلوكس رجالي أحمر لقطة</p>
+                                <span>تاريخ</span>
+                            </div>
+                        </a>
+
+                        <div id="popup-2" class="prod-popup media-popup mfp-hide">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/EQjVl4UYYPQ" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#popup-3" class="gallery-popup">
+                            <img src="~/Assets/images/media-photos-img01.jpg" alt="">
+                            <div class="video-overlay"></div>
+                            <div class="text">
+                                <h3>شماغ بوتشيني رجالي أحمر (2015)</h3>
+                                <p>ديلوكس رجالي أحمر لقطة</p>
+                                <span>تاريخ</span>
+                            </div>
+                        </a>
+
+                        <div id="popup-3" class="prod-popup media-popup mfp-hide">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/EQjVl4UYYPQ" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Arrows -->
+                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="~/Assets/images/media-photos-thumb01.jpg" alt="">
+                        <h4>ثوب دروش 2015</h4>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="~/Assets/images/media-photos-thumb01.jpg" alt="">
+                        <h4>ثوب دروش 2015</h4>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="~/Assets/images/media-photos-thumb01.jpg" alt="">
+                        <h4>ثوب دروش 2015</h4>
+                    </div>
+                </div>
+
+                <div class="gallery-nav">
+                    <span class="prev"><i class="fa fa-angle-right"></i></span>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <span class="next"><i class="fa fa-angle-left"></i></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+        $(document).ready(function () {
+            /*************** product details popup ***************/
+            $('.gallery-popup').magnificPopup({
+				type: 'inline',
+				closeOnBgClick: true
+            });
+        });
+</script>
